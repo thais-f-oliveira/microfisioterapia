@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thaís F. Oliveira – Fisioterapia Integrativa & Microfisioterapia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--sage:#7a9e7e;--sage-light:#a8c5ab;--sage-dark:#4e7152;--cream:#faf7f2;--sand:#e8dfd0;--sand-light:#f3ede3;--text-dark:#2c2c2c;--text-mid:#5a5a5a;--text-light:#8a8a8a}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text-dark);line-height:1.7}
+    nav{position:sticky;top:0;z-index:100;background:rgba(250,247,242,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(122,158,126,.15);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{font-family:'Playfair Display',serif;font-size:1.15rem;color:#4e7152;font-weight:600;text-decoration:none}
+    .nav-links{display:flex;gap:1.5rem;align-items:center;list-style:none}
+    .nav-links a{text-decoration:none;color:#5a5a5a;font-size:.85rem;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:#4e7152}
+    .nav-cta{background:#7a9e7e!important;color:white!important;padding:.45rem 1.1rem;border-radius:50px;font-weight:600!important}
+    .hero{min-height:92vh;display:flex;align-items:center;padding:60px 5%;background:linear-gradient(135deg,#faf7f2 0%,#f3ede3 100%);position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-80px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(122,158,126,.13) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+    .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;width:100%}
+    .badge{display:inline-block;background:rgba(122,158,126,.12);color:#4e7152;font-size:.73rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.4rem 1rem;border-radius:50px;margin-bottom:1.4rem;border:1px solid rgba(122,158,126,.25)}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);line-height:1.2;margin-bottom:1rem;color:#2c2c2c}
+    h1 span{color:#4e7152}
+    .hero-sub{font-size:1rem;color:#5a5a5a;margin-bottom:.7rem;font-weight:300}
+    .hero-loc{font-size:.85rem;color:#8a8a8a;margin-bottom:2rem}
+    .btn-primary{display:inline-flex;align-items:center;gap:.6rem;background:#7a9e7e;color:white;padding:.9rem 1.8rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:.92rem;box-shadow:0 4px 20px rgba(78,113,82,.25);transition:all .25s}
+    .btn-primary:hover{background:#4e7152;transform:translateY(-2px)}
+    .btn-sec{color:#4e7152;text-decoration:none;font-weight:500;margin-left:1.2rem;font-size:.92rem}
+    .photo-wrap{position:relative;display:flex;justify-content:center;align-items:center}
+    .photo-circle{width:320px;height:320px;border-radius:50%;background:linear-gradient(145deg,#a8c5ab,#7a9e7e);display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 20px 60px rgba(122,158,126,.3)}
+    .photo-circle::after{content:'';position:absolute;inset:-12px;border-radius:50%;border:2px dashed rgba(122,158,126,.35)}
+    .photo-emoji{font-size:5.5rem;user-select:none}
+    .hero-stats{position:absolute;bottom:-10px;left:-10px;background:white;border-radius:16px;padding:.9rem 1.2rem;box-shadow:0 8px 30px rgba(0,0,0,.1);display:flex;align-items:center;gap:.9rem}
+    .stat-n{font-size:1.4rem;font-weight:700;color:#4e7152;font-family:'Playfair Display',serif}
+    .stat-l{font-size:.72rem;color:#8a8a8a;line-height:1.3}
+    .divider{width:1px;background:#e8dfd0;height:36px}
+    section{padding:72px 5%}
+    .inner{max-width:1100px;margin:0 auto}
+    .stag{display:inline-block;color:#4e7152;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.7rem}
+    h2{font-family:'Playfair Display',serif;font-size:clamp(1.7rem,2.8vw,2.3rem);margin-bottom:.9rem;color:#2c2c2c;line-height:1.25}
+    .sdesc{font-size:.97rem;color:#5a5a5a;max-width:540px;font-weight:300;margin-bottom:2.5rem}
+    .pq-section{background:#faf7f2}
+    .pq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem;margin-top:2.5rem}
+    .pq-item{background:white;border-radius:14px;padding:1.2rem 1.4rem;border:1px solid #e8dfd0;display:flex;align-items:center;gap:.9rem;transition:all .25s}
+    .pq-item:hover{border-color:#a8c5ab;transform:translateY(-2px);box-shadow:0 6px 20px rgba(122,158,126,.12)}
+    .pq-item .em{font-size:1.5rem}
+    .pq-item span{font-size:.87rem;font-weight:500;color:#2c2c2c}
+    .trat-section{background:white}
+    .trat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.4rem;margin-top:2.5rem}
+    .trat-card{background:#faf7f2;border-radius:20px;padding:1.8rem;border:1px solid rgba(122,158,126,.12);transition:all .3s}
+    .trat-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(122,158,126,.15);border-color:rgba(122,158,126,.3)}
+    .trat-icon{width:46px;height:46px;background:linear-gradient(135deg,#a8c5ab,#7a9e7e);border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:1.1rem}
+    .trat-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:.5rem;color:#2c2c2c}
+    .trat-card p{font-size:.88rem;color:#5a5a5a;line-height:1.65}
+    .sobre-section{background:#f3ede3}
+    .sobre-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:3.5rem;align-items:center}
+    .sobre-foto{width:100%;max-width:300px;aspect-ratio:4/5;background:linear-gradient(145deg,#a8c5ab,#4e7152);border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:5rem;box-shadow:0 20px 50px rgba(78,113,82,.2)}
+    .sobre-grid p{color:#5a5a5a;margin-bottom:1rem;font-size:.95rem}
+    .form-list{margin-top:1.5rem}
+    .form-item{display:flex;align-items:flex-start;gap:.7rem;margin-bottom:.6rem;font-size:.87rem;color:#5a5a5a}
+    .fdot{width:7px;height:7px;border-radius:50%;background:#7a9e7e;flex-shrink:0;margin-top:6px}
+    .dep-section{background:white}
+    .dep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.4rem;margin-top:2.5rem}
+    .dep-card{background:#faf7f2;border-radius:20px;padding:1.8rem;border:1px solid #e8dfd0}
+    .stars{color:#f4c542;margin-bottom:.9rem}
+    .dep-text{font-size:.91rem;color:#5a5a5a;line-height:1.7;font-style:italic;margin-bottom:1.4rem}
+    .dep-aut{display:flex;align-items:center;gap:.75rem}
+    .dep-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#a8c5ab,#7a9e7e);display:flex;align-items:center;justify-content:center;color:white;font-weight:600;flex-shrink:0}
+    .dep-nm{font-size:.86rem;font-weight:600;color:#2c2c2c}
+    .dep-cd{font-size:.76rem;color:#8a8a8a}
+    .faq-section{background:#faf7f2}
+    .faq-list{margin-top:2.5rem;display:flex;flex-direction:column;gap:.9rem;max-width:700px}
+    details{background:white;border-radius:14px;border:1px solid #e8dfd0;overflow:hidden;transition:border-color .2s}
+    details[open]{border-color:#a8c5ab}
+    summary{padding:1.2rem 1.4rem;cursor:pointer;font-weight:500;font-size:.95rem;list-style:none;display:flex;justify-content:space-between;align-items:center;color:#2c2c2c}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:'+';font-size:1.3rem;color:#7a9e7e;font-weight:300;margin-left:1rem;flex-shrink:0}
+    details[open] summary::after{content:'-'}
+    .faq-ans{padding:0 1.4rem 1.2rem;font-size:.91rem;color:#5a5a5a;line-height:1.7}
+    .cta-section{background:linear-gradient(135deg,#4e7152 0%,#3a5c3d 100%);color:white;text-align:center;padding:72px 5%}
+    .cta-section .stag{color:rgba(255,255,255,.6)}
+    .cta-section h2{color:white;max-width:580px;margin:0 auto .9rem}
+    .cta-desc{color:rgba(255,255,255,.75);max-width:480px;margin:0 auto 2.2rem;font-size:.95rem}
+    .cta-btn{display:inline-flex;align-items:center;gap:.6rem;background:white;color:#4e7152;padding:.95rem 2rem;border-radius:50px;font-weight:700;font-size:.97rem;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,.15);transition:all .25s}
+    .cta-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,.2)}
+    .cta-info{margin-top:1.4rem;display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+    .cta-info span{color:rgba(255,255,255,.65);font-size:.82rem}
+    footer{background:#1e2e1f;color:rgba(255,255,255,.5);text-align:center;padding:2.2rem 5%;font-size:.8rem}
+    footer a{color:#a8c5ab;text-decoration:none}
+    footer p+p{margin-top:.5rem}
+    .wa-float{position:fixed;bottom:24px;right:24px;z-index:200;width:54px;height:54px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45);text-decoration:none;transition:all .25s}
+    .wa-float:hover{transform:scale(1.1)}
+    .wa-float svg{width:28px;height:28px;fill:white}
+    @media(max-width:780px){
+      .hero-inner{grid-template-columns:1fr;text-align:center}
+      .photo-wrap{order:-1}
+      .photo-circle{width:240px;height:240px}
+      .hero-stats{bottom:-8px;left:50%;transform:translateX(-50%)}
+      .nav-links li:not(:last-child){display:none}
+      .sobre-grid{grid-template-columns:1fr}
+      .sobre-foto{max-width:260px;margin:0 auto}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">Thaís F. Oliveira</a>
+  <ul class="nav-links">
+    <li><a href="#tratamentos">Tratamentos</a></li>
+    <li><a href="#sobre">Sobre mim</a></li>
+    <li><a href="#depoimentos">Depoimentos</a></li>
+    <li><a href="#faq">Dúvidas</a></li>
+    <li><a href="https://api.whatsapp.com/send?phone=5512981342549&text=Ola!" target="_blank" class="nav-cta">Agendar consulta</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="badge">Fisioterapia Integrativa · Microfisioterapia</span>
+      <h1>Cuidado que <span>vai além</span> dos sintomas</h1>
+      <p class="hero-sub">Sou Thaís Figueiredo de Oliveira, fisioterapeuta especializada em Terapia Manual e Microfisioterapia.</p>
+      <p class="hero-loc">📍 R. Dr. Tito Roberto Liberato, n° 83 – São José dos Campos, SP · Sala 303</p>
+      <a href="https://api.whatsapp.com/send?phone=5512981342549&text=Ola!" target="_blank" class="btn-primary">💬 Agendar pelo WhatsApp</a>
+      <a href="#sobre" class="btn-sec">Conheça meu trabalho →</a>
+    </div>
+    <div class="photo-wrap">
+      <div class="photo-circle">
+        <img src="fotoThais.png" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="Thaís F. Oliveira"/>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-n">10+</div><div class="stat-l">anos de<br>experiência</div></div>
+        <div class="divider"></div>
+        <div><div class="stat-n">⭐ 5.0</div><div class="stat-l">avaliação<br>dos pacientes</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pq-section">
+  <div class="inner">
+    <div class="stag">Para quem é indicado</div>
+    <h2>Você pode se beneficiar se sofre com…</h2>
+    <div class="pq-grid">
+      <div class="pq-item"><span class="em">🦴</span><span>Dores na coluna ou articulações</span></div>
+      <div class="pq-item"><span class="em">😓</span><span>Tensão muscular crônica</span></div>
+      <div class="pq-item"><span class="em">😴</span><span>Cansaço e falta de energia</span></div>
+      <div class="pq-item"><span class="em">🧠</span><span>Estresse e ansiedade</span></div>
+      <div class="pq-item"><span class="em">🤕</span><span>Dores de cabeça frequentes</span></div>
+      <div class="pq-item"><span class="em">🩺</span><span>Sequelas de lesões antigas</span></div>
+      <div class="pq-item"><span class="em">🫀</span><span>Sensação de corpo travado</span></div>
+      <div class="pq-item"><span class="em">💆</span><span>Busca por bem-estar geral</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="trat-section" id="tratamentos">
+  <div class="inner">
+    <div class="stag">Especialidades</div>
+    <h2>O que ofereço</h2>
+    <p class="sdesc">Cada tratamento é pensado de forma individualizada, respeitando o histórico e as necessidades únicas de cada paciente.</p>
+    <div class="trat-grid">
+      <div class="trat-card">
+        <div class="trat-icon">🌿</div>
+        <h3>Fisioterapia Integrativa</h3>
+        <p>Abordagem que une técnicas convencionais com práticas integrativas, tratando o ser humano de forma completa — corpo, mente e emoções.</p>
+      </div>
+      <div class="trat-card">
+        <div class="trat-icon">🤲</div>
+        <h3>Terapia Manual</h3>
+        <p>Técnicas manuais especializadas para mobilização de articulações, alívio de tensões musculares e restauração do movimento funcional.</p>
+      </div>
+      <div class="trat-card">
+        <div class="trat-icon">✨</div>
+        <h3>Microfisioterapia</h3>
+        <p>Método suave e profundo que identifica e trata as causas mais remotas de doenças e disfunções, estimulando a autorregulação natural do corpo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sobre-section" id="sobre">
+  <div class="inner">
+    <div class="sobre-grid">
+      <div class="sobre-foto"><img src="fotoThais2.jpg" style="width:100%;height:100%;object-fit:cover;border-radius:24px;" alt="Thaís F. Oliveira"/></div>
+      <div>
+        <div class="stag">Sobre mim</div>
+        <h2>Olá, eu sou a Thaís</h2>
+        <p>Sou fisioterapeuta apaixonada por uma abordagem que vai além dos sintomas. Acredito que cada pessoa carrega em seu corpo a capacidade de se curar — meu papel é abrir esse caminho com cuidado, escuta e técnica.</p>
+        <p>Atendo em São José dos Campos com foco em tratamentos personalizados, respeitando a singularidade de cada paciente.</p>
+        <div class="form-list">
+          <div class="form-item"><div class="fdot"></div><span>Fisioterapia Integrativa</span></div>
+          <div class="form-item"><div class="fdot"></div><span>Especialização em Terapia Manual</span></div>
+          <div class="form-item"><div class="fdot"></div><span>Formação em Microfisioterapia</span></div>
+          <div class="form-item"><div class="fdot"></div><span>Atendimento em São José dos Campos – SP</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dep-section" id="depoimentos">
+  <div class="inner">
+    <div class="stag">Depoimentos</div>
+    <h2>O que dizem meus pacientes</h2>
+    <p class="sdesc">Histórias reais de quem já passou pelo processo de cuidado e transformação.</p>
+    <div class="dep-grid">
+      <div class="dep-card">
+        <div class="stars">★★★★★</div>
+        <p class="dep-text">"Foi muito boa a experiência.Eu e meus filhos fizemos as sessões de micro com a Thaís. Ótima profissional."</p>
+        <div class="dep-aut"><div class="dep-av">C</div><div><div class="dep-nm">Caroline N.</div><div class="dep-cd">  </div></div></div>
+      </div>
+      <div class="dep-card">
+        <div class="stars">★★★★★</div>
+        <p class="dep-text">"Thaís é uma excelente profissional e pessoa! Nossa família foi atendida por ela e o diagnóstico foi preciso e o tratamento também! Em pouco tempo já colhemos resultados positivos sem falar na atenção que ela nos deu antes, durante e depois dos atendimentos! Recomendo de olhos fechados! Aproveito para agradecer publicamente todo carinho e trabalho ❤️"</p>
+        <div class="dep-aut"><div class="dep-av">T</div><div><div class="dep-nm">Thaisa </div><div class="dep-cd">  </div></div></div>
+      </div>
+      <div class="dep-card">
+        <div class="stars">★★★★★</div>
+        <p class="dep-text">"Thais é maravilhosa... dá suporte depois das consultas, nos acompanhando na evolução dos desbloqueios. Gentil, educada e assertiva, excelente profissional, recomendo e indico milhões de vezes."</p>
+        <div class="dep-aut"><div class="dep-av">J</div><div><div class="dep-nm">Joane</div><div class="dep-cd"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <div class="inner">
+    <div class="stag">Dúvidas frequentes</div>
+    <h2>Perguntas mais comuns</h2>
+    <div class="faq-list">
+      <details>
+        <summary>O que é Microfisioterapia e como ela funciona?</summary>
+        <div class="faq-ans">A Microfisioterapia é uma terapia manual muito sutil que, por meio de micro palpações, identifica as causas primárias de doenças ou disfunções — mesmo que sejam antigas ou emocionais — e estimula o organismo a eliminá-las, ativando sua capacidade natural de autorregulação.</div>
+      </details>
+      <details>
+        <summary>Quantas sessões são necessárias?</summary>
+        <div class="faq-ans">Varia de acordo com o histórico de cada paciente. Em geral, muitas pessoas já percebem resultados nas primeiras 3 a 5 sessões. Na avaliação inicial, faço uma estimativa mais precisa para o seu caso.</div>
+      </details>
+      <details>
+        <summary>A Fisioterapia Integrativa pode ajudar com questões emocionais?</summary>
+        <div class="faq-ans">Sim. A abordagem integrativa entende que corpo e mente estão profundamente conectados. Tensões emocionais frequentemente se manifestam no físico, e o tratamento leva isso em conta para resultados mais duradouros.</div>
+      </details>
+      <details>
+        <summary>Como funciona o agendamento?</summary>
+        <div class="faq-ans">O agendamento é feito pelo WhatsApp ou telefone. Atendo com hora marcada no Ed. Oregon Business Center, Sala 303, Parque Residencial Aquarius, São José dos Campos – SP.</div>
+      </details>
+      <details>
+        <summary>Atende planos de saúde?</summary>
+        <div class="faq-ans">Entre em contato pelo WhatsApp para verificar as opções disponíveis e formas de pagamento aceitas no momento.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="stag">Próximo passo</div>
+  <h2>Pronto(a) para começar sua jornada de bem-estar?</h2>
+  <p class="cta-desc">Agende sua consulta agora mesmo. Respondo pelo WhatsApp e fico feliz em tirar todas as suas dúvidas antes da primeira sessão.</p>
+  <a href="https://api.whatsapp.com/send?phone=5512981342549&text=Ola!" target="_blank" class="cta-btn">💬 Falar no WhatsApp</a>
+  <div class="cta-info">
+    <span>📍 Parque Res. Aquarius, São José dos Campos</span>
+    <span>📞 (12) 98134-2549</span>
+    <span>📅 Horários agendados</span>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Thaís F. Oliveira – Fisioterapia Integrativa &amp; Microfisioterapia · São José dos Campos, SP</p>
+  <p><a href="https://www.instagram.com/thais.fisioterapiaintegrativa/" target="_blank">Instagram</a> · <a href="https://maps.app.goo.gl/VRWQjV2PMW1rKMix9" target="_blank">Como chegar</a></p>
+</footer>
+
+<a href="https://api.whatsapp.com/send?phone=5512981342549&text=Ola!" target="_blank" class="wa-float" title="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
